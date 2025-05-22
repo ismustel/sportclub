@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import React from 'react';
-import  Sidebar from 'app/components.tsx';
+import  Sidebar from 'app/components/sidebar.tsx';
 import 'app/app.css'
 
 export function loader() {
@@ -15,13 +15,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <div>
             <Sidebar AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits} />
         </div>
-      <h1 className="text-2xl">Hello, {loaderData.name}</h1>
-      <a
-        className="block mt-2 text-blue-500 underline hover:text-blue-600"
-        href="https://reactrouter.com/docs"
-      >
-        Reacdsadadadasdasdasdasd
-      </a>
     </div>
   );
 };

@@ -4,7 +4,7 @@ h1 {
 }
 
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: 81px;
@@ -78,6 +78,13 @@ h1 {
     overflow: hidden;
     margin-top: 20px;
 }
+.avatar_no_visible {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 20px;
+}
 
 .avatar img {
     width: 100%;
@@ -89,4 +96,102 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
+}
+.container {
+    width: 466px;
+    height: 100vh;
+    background-color: #ccbdb4;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.play-button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid blue;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.visits {
+    font-size: 16px;
+    color: #666;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+.form {
+    margin-bottom: 30px;
+}
+
+.form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+}
+
+.edit-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ff9966;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #ff7a4d;
 }
