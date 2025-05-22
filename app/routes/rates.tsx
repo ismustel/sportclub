@@ -1,4 +1,7 @@
 import type { Route } from "./+types/rates";
+import  Sidebar from 'app/components/sidebar.tsx';
+import React from "react";
+
 
 type User = {
     name: string;
@@ -7,29 +10,15 @@ type User = {
 
 export function loader() {
     return { name: "Rfsdafsdfads",
-        users : [
-        {name:"ilya", pass:"123"},
-        {name:"lya", pass:"1234"},
-    ]};
+        avatar: 'app/img/avatar.png',
+        countVisits: 1
+    };
 }
 
 export default function Rates({ loaderData }: Route.ComponentProps) {
-    const users = loaderData.users as User[];
     return (
-
-        <div className="text-center p-4">
-            <h1 className="text-2xl">Привет, {loaderData.name}</h1>
-            <a
-                className="block mt-2 text-blue-500 underline hover:text-blue-600"
-                href="https://reactrouter.com/docs"
-            >
-
-            </a>
-            {users.map((user ): any => (
-                <div>
-                    Имя: {user.name}, password: {user.pass}
-                </div>
-            ))}
+        <div>
+            <Sidebar AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
         </div>
     );
 }

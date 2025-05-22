@@ -6,7 +6,7 @@ import 'app/app.css'
 export function loader() {
   return { name: "React Router" ,
   avatar: 'app/img/avatar.png',
-  countVisits: 1,};
+  countVisits: 1};
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
