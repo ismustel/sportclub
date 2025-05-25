@@ -3,12 +3,52 @@ h1 {
     font-size: 43px;
 }
 
+/*.sidebar {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    width: 81px;*/
+/*    height: 100vh;*/
+/*    background-color: #cebeb5;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: flex-start;*/
+/*}*/
+/**/
+
+.layout {
+    display: grid;
+    grid-template-areas:
+    "header   header"
+    "content  sidebar"
+    "footer   footer";
+    grid-template-columns: 1fr auto; /* 1fr - автоматически распределит ширину */
+    grid-template-rows: auto 1fr auto; /* header/footer по высоте контента, content займёт оставшееся место */
+    height: 100vh; /* На весь экран */
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    grid-area: header;
+    background-color: #d29776;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Поля по краям */
+}
+
+.content {
+    grid-area: content;
+    background-color: #f9f9f9;
+    padding: 20px;
+    overflow-y: auto;
+}
+
 .sidebar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 81px;
-    height: 100vh;
+    grid-area: sidebar;
+    padding: 0;
     background-color: #cebeb5;
     display: flex;
     flex-direction: column;
@@ -16,6 +56,25 @@ h1 {
     justify-content: flex-start;
 }
 
+.sidebar .closed {
+    width: 80px;
+}
+.sidebar .opened {
+    width: 350px;
+}
+
+.sidebar .opened .opened-container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
 .arrow-button {
     width: 48px;
@@ -26,15 +85,14 @@ h1 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 10px 0 0 10px;
 }
 
 .arrow-button svg {
     fill: orange;
 }
 
-
-.separator {
+.separator-sidebar {
     width: 100%;
     height: 1px;
     margin: 10px 0;
@@ -98,8 +156,10 @@ h1 {
     margin-top: 10px;
 }
 .container {
-    width: 466px;
+    width: 100%;
+    max-width: 466px;
     height: 100vh;
+
     background-color: #ccbdb4;
     overflow: hidden;
     display: flex;
@@ -107,12 +167,12 @@ h1 {
     padding: 20px;
     justify-content: flex-start;
     position: absolute;
+    overflow-y: auto;
     top: 0;
     right: 0;
-
 }
 
-.header {
+.header-sidebar-show {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -193,5 +253,327 @@ h1 {
 }
 
 .edit-button:hover {
+    background-color: #ff7a4d;
+}
+@media (max-width: 500px) {
+    /*.profile {*/
+    /*    flex-direction: column;*/
+    /*    align-items: flex-start;*/
+    /*}*/
+    /**/
+    /*.avatar {*/
+    /*    margin-bottom: 15px;*/
+    /*    margin-right: 0;*/
+    /*}*/
+    /**/
+    /*.name {*/
+    /*    font-size: 20px;*/
+    /*}*/
+    /**/
+    /*.visits {*/
+    /*    font-size: 14px;*/
+    /*}*/
+    /**/
+    /*.form input,*/
+    /*.edit-button {*/
+    /*    font-size: 16px;*/
+    /*    padding: 12px;*/
+    /*}*/
+
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+      "header"
+      "sidebar"
+      "content"
+      "footer";
+    }
+
+    .sidebar {
+        width: 100%;
+
+    }
+
+    .sidebar .open {
+        width: 100%;
+        height: 600px;
+    }
+
+    .sidebar .closed {
+        width: 100%;
+        height: 50px;
+    }
+
+}
+
+
+/* Заголовок */
+/*.header {*/
+/*    width: 100%; !* Ширина во всю страницу *!*/
+/*    height: 68px; !* Высота 68 пикселей *!*/
+/*    background-color: #d29776; !* Цвет фона из вашего примера *!*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding: 0 20px; !* Поля по краям *!*/
+/*}*/
+
+/* Логотип */
+.logo h1 {
+    font-size: 32px; /* Размер шрифта */
+    font-weight: bold;
+    color: #333; /* Цвет текста */
+}
+
+/*.footer {*/
+/*    width: 100%; !* Ширина во всю страницу *!*/
+/*    height: 50px; !* Высота 50 пикселей *!*/
+/*    background-color: #eaeaea; !* Цвет фона из вашего примера *!*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+
+
+/*}*/
+/**/
+/* Область содержимого*/
+/*.footer-content {*/
+/*    width: 100%;*/
+/*    max-width: 1200px; !* Максимальная ширина контента *!*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    padding: 0 20px; !* Поля по краям *!*/
+/*}*/
+
+/* Левая секция */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между элементами */
+}
+
+/* Иконки */
+.location-icon,
+.clock-icon,
+.link-icon {
+    color: #ff9966; /* Цвет иконок */
+    font-size: 18px; /* Размер иконок */
+}
+
+/* Разделители */
+.separator-footer {
+    color: #333; /* Цвет разделителя */
+    margin: 0 10px; /* Отступы вокруг разделителя */
+}
+
+/* Ссылки */
+.left-section a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #333; /* Цвет ссылок */
+}
+
+/* Правая секция */
+.right-section {
+    font-size: 16px; /* Размер текста */
+    color: #333; /* Цвет текста */
+}
+
+/* Основной контейнер */
+/* Основной контейнер */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Левая колонка */
+.left-column {
+    flex: 1; /* Занимает доступное пространство */
+    margin-right: 40px; /* Отступ между колонками */
+}
+
+.image-container {
+    text-align: center;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 400px; /* Максимальная ширина изображения */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+    margin-top: 20px;
+}
+
+.text-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Правая колонка */
+.right-column {
+    flex: 1; /* Занимает доступное пространство */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца */
+    gap: 20px; /* Отступ между блоками */
+}
+
+.info-block {
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.info-block h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.info-block p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Основной контейнер */
+.container-rates {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Заголовок */
+.title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Слайдер */
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для кнопок навигации слайдера */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff9966;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 20px;
+}
+
+.slick-next {
+    right: 20px;
+}
+
+/* Стили для точек (dots) */
+.slick-dots {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.slick-dots li button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #ff9966;
+}
+
+/* Карточка */
+.card {
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card-description {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-description li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.checkmark {
+    color: #ff9966;
+    margin-right: 10px;
+}
+
+.card-button {
+    background-color: #ff9966;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
     background-color: #ff7a4d;
 }

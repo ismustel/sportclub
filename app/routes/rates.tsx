@@ -1,5 +1,8 @@
 import type { Route } from "./+types/rates";
-import  Sidebar from 'app/components/sidebar.tsx';
+import  Sidebar from 'app/components/sidebar';
+import  Header from 'app/components/header';
+import Footer from 'app/components/footer';
+import ContentRates from "~/components/contentRates";
 import React from "react";
 
 
@@ -17,8 +20,14 @@ export function loader() {
 
 export default function Rates({ loaderData }: Route.ComponentProps) {
     return (
-        <div>
-            <Sidebar AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
+        <div className="layout">
+            <Sidebar className="sidebar" AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
+            <Header className="header" />
+            <main className="content">
+                <ContentRates />
+            </main>
+            <Footer className="footer" />
+
         </div>
     );
 }
