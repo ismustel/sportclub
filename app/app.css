@@ -13,6 +13,11 @@ h1 {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%); /* Обрезка справа */
 }
 
+.controls {
+    align-content: center;
+}
+
+
 .hero-text h1 {
     font-size: 72px;
     color: #9d5b39;
@@ -40,6 +45,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px; /* Поля по краям */
+    display: flex;
 }
 
 .content {
@@ -109,9 +115,10 @@ h1 {
 }
 
 .separator-sidebar {
-    width: 20px;
+    width: 45px;
     height: 1px;
-    margin: 10px 0;
+    margin-left: 15px;
+    margin-top: 10px;
     color: #d29776;
     align-self: center;
 }
@@ -339,6 +346,7 @@ h1 {
 .logo h1 {
     font-size: 32px; /* Размер шрифта */
     font-weight: bold;
+    margin: 0;
     color: #333; /* Цвет текста */
 }
 
