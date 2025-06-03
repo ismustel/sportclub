@@ -1,4 +1,4 @@
-import type { Route } from "./+types/rates";
+import type { Route } from "./+types/about";
 import  Sidebar from 'app/components/sidebar';
 import  Header from 'app/components/header';
 import Footer from 'app/components/footer';
@@ -15,8 +15,8 @@ export function loader() {
 export default function About({ loaderData }: Route.ComponentProps) {
     return (
         <div>
-            <Sidebar AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
-            <Header />
+            <Sidebar AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits} className={"sidebar"}/>
+            <Header className="header" />
             <div className="container-about">
                 <div className="left-column">
 
@@ -61,7 +61,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
                     />
                 </div>
             </div>
-            <Footer />
+            <Footer className={'rooter'} />
         </div>
     )
 }
