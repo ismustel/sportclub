@@ -14,10 +14,10 @@ export function loader() {
 
 export default function About({ loaderData }: Route.ComponentProps) {
     return (
-        <div>
+        <div className="layout">
             <Sidebar AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits} className={"sidebar"}/>
             <Header className="header" />
-            <div className="container-about">
+            <div className="content">
                 <div className="left-column">
 
                     <div className="image-container">
@@ -36,6 +36,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
 
 
                 <div className="right-column">
+
                     <InfoBlock
 
                         title= "🏋️‍♂️Профессиональное оборудование"
@@ -59,6 +60,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
                         title="🔥Мотивационная атмосфера"
                         description="Поддержка, драйв и единомышленники — всё это поможет вам не сдаваться и двигаться вперёд!"
                     />
+
                 </div>
             </div>
             <Footer className={'rooter'} />

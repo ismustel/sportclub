@@ -1,4 +1,40 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Kablammo';
+    src: url('fonts/kablammo/static/Kablammo-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Istok Web';
+    src: url('fonts/IstokWeb/IstokWeb-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cuprum';
+    src: url('fonts/Cuprum/static/Cuprum-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-Black';
+    src: url('fonts/Inter/Inter-Black.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-ExtaLight';
+    src: url('fonts/Inter/Inter-ExtraLight.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1 {
     font-size: 43px;
 }
@@ -9,8 +45,8 @@ h1 {
     left: 0;   /* Расположение слева */
     background-color: rgba(255, 255, 255, 0.8); /* Прозрачный белый фон */
     padding: 20px 10% 20px 20px;
+    clip-path: polygon(0 0, calc(100% - 100px) 0, 100% 100%, 100% 100%, 0 100%);
 
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%); /* Обрезка справа */
 }
 
 .controls {
@@ -36,6 +72,7 @@ h1 {
     height: 100vh; /* На весь экран */
     margin: 0;
     padding: 0;
+
 }
 
 .header {
@@ -48,12 +85,32 @@ h1 {
     display: flex;
 }
 
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-right: 40%;
+    display: flex;
+    gap: 20px;
+
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Istok Web', serif;
+    font-size: 20px;
+    transition: color 0.3s ease;
+
+}
+
 .content {
     grid-area: content;
-    background-color: #f9f9f9;
+    background-color: #d9d7d7;
     overflow: hidden;
     position: relative;
     z-index: 1;
+    display: flex;
 
 }
 
@@ -96,6 +153,78 @@ h1 {
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative;
+
+}
+
+.text-footer {
+    font-family: 'Cuprum', serif;
+    font-size: 28px;
+    display: inline-block;
+
+}
+
+.separator-footer {
+    color: #333;
+    margin: 0 10px;
+    font-size: 20px/* Отступы вокруг разделителя */
+}
+
+
+
+.footer-content {
+    width: 100%;
+    /*max-width: 1200px; !* Максимальная ширина контента *!*/
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px; /* Поля по краям */
+    align-items: center;
+
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между элементами */
+    flex: 1;
+}
+
+
+.right-section {
+    font-size: 16px; /* Размер текста */
+    top: 50%;
+    right: 20px;
+    color: #333; /* Цвет текста */
+    white-space: nowrap;
+}
+
+
+.weekday {
+    margin-right: 10px; /* Отступ справа */
+}
+
+.weekend {
+    margin-left: 10px; /* Отступ слева */
+}
+
+@media (max-width: 2000px) {
+    .weekend {
+        margin-left: 0; /* Отступ слева */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
+
 }
 
 .arrow-button {
@@ -331,52 +460,16 @@ h1 {
 }
 
 
-/* Заголовок */
-/*.header {*/
-/*    width: 100%; !* Ширина во всю страницу *!*/
-/*    height: 68px; !* Высота 68 пикселей *!*/
-/*    background-color: #d29776; !* Цвет фона из вашего примера *!*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: space-between;*/
-/*    padding: 0 20px; !* Поля по краям *!*/
-/*}*/
 
-/* Логотип */
 .logo h1 {
-    font-size: 32px; /* Размер шрифта */
+    font-size: 48px; /* Размер шрифта */
+    font-family: 'Kablammo', serif;
     font-weight: bold;
-    margin: 0;
-    color: #333; /* Цвет текста */
+    margin-left: 20px;
+
+    color: #ffffff; /* Цвет текста */
 }
 
-/*.footer {*/
-/*    width: 100%; !* Ширина во всю страницу *!*/
-/*    height: 50px; !* Высота 50 пикселей *!*/
-/*    background-color: #eaeaea; !* Цвет фона из вашего примера *!*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-
-
-/*}*/
-/**/
-/* Область содержимого*/
-/*.footer-content {*/
-/*    width: 100%;*/
-/*    max-width: 1200px; !* Максимальная ширина контента *!*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    padding: 0 20px; !* Поля по краям *!*/
-/*}*/
-
-/* Левая секция */
-.left-section {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Расстояние между элементами */
-}
-
-/* Иконки */
 .location-icon,
 .clock-icon,
 .link-icon {
@@ -384,47 +477,28 @@ h1 {
     font-size: 18px; /* Размер иконок */
 }
 
-/* Разделители */
-.separator-footer {
-    color: #333; /* Цвет разделителя */
-    margin: 0 10px; /* Отступы вокруг разделителя */
-}
 
-/* Ссылки */
+
 .left-section a {
     text-decoration: none; /* Убираем подчеркивание */
     color: #333; /* Цвет ссылок */
 }
 
-/* Правая секция */
-.right-section {
-    font-size: 16px; /* Размер текста */
-    color: #333; /* Цвет текста */
-}
-
-/* Основной контейнер */
-/* Основной контейнер */
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Левая колонка */
 .left-column {
     flex: 1; /* Занимает доступное пространство */
     margin-right: 40px; /* Отступ между колонками */
 }
 
-.image-container {
-    text-align: center;
-}
+/*.image-container {*/
+/*    text-align: center;*/
+/*}*/
 
 .main-image {
     width: 100%;
-    max-width: 400px; /* Максимальная ширина изображения */
-    height: auto;
+
+   /* Максимальная ширина изображения */
+    margin-top: 20px;
+    margin-left: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -434,15 +508,18 @@ h1 {
 }
 
 .text-container h2 {
-    font-size: 24px;
+    font-family: 'Inter-Black', serif;
+    font-size: 26px;
     color: #333;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .text-container p {
-    font-size: 16px;
+    font-family: 'Inter-ExtaLight', serif;
+    font-size: 25px;
     color: #666;
-    line-height: 1.6;
+    text-align: center;
 }
 
 /* Правая колонка */
@@ -450,32 +527,40 @@ h1 {
     flex: 1; /* Занимает доступное пространство */
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Два столбца */
-    gap: 20px; /* Отступ между блоками */
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+
 }
 
 .info-block {
-    background-color: #eaeaea;
+    background-color: #d29776;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    align-items: center;
+
+}
+
+.info-block h3 {
+    font-family: 'Inter-Black', serif;
+    font-size: 24px;
+    margin-bottom: 35%;
+    text-align: center;
+
+}
+
+.info-block p {
+    font-family: 'Inter-ExtaLight', serif;
+    font-size: 26px;
+    text-align: center;
 }
 
 .info-icon {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-}
-
-.info-block h3 {
-    font-size: 18px;
-    color: #333;
-    margin: 10px 0;
-}
-
-.info-block p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
 }
 
 /* Основной контейнер */
@@ -601,4 +686,52 @@ h1 {
 
 .card-button:hover {
     background-color: #ff7a4d;
+}
+
+.box-container {
+    background-color: #666; /* Серый фон */
+    color: white; /* Белый текст */
+    padding: 20px; /* Поля вокруг содержимого */
+    border: 2px solid #00f; /* Голубая граница */
+    border-radius: 8px; /* Скругленные углы */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Заголовок */
+.title-rates {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Изображение */
+.image-rates {
+    width: 100%; /* Занимает всю ширину контейнера */
+    max-width: 300px; /* Максимальная ширина изображения */
+    height: auto; /* Сохраняет пропорции */
+    margin-bottom: 20px; /* Отступ под изображением */
+}
+
+/* Цена */
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Список функций */
+.features {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Отступ между пунктами */
+}
+
+.checkmark {
+    font-size: 20px;
+    margin-right: 10px; /* Отступ между галочкой и текстом */
+    color: #00f; /* Голубой цвет галочки */
 }

@@ -1,11 +1,11 @@
-import type { Route } from "./+types/rates";
-import  Sidebar from 'app/components/sidebar';
-import  Header from 'app/components/header';
-import Footer from 'app/components/footer';
+import type { Route } from './+types/trainer';
+import  Sidebar from '~/components/sidebar';
+import  Header from '~/components/header';
+import Footer from '~/components/footer';
 import ContentRates from "~/components/contentRates";
 import React from "react";
 import type {EmblaOptionsType} from "embla-carousel";
-import 'app/embla.css'
+import 'app/emblaTrainer.css'
 
 
 export function loader() {
@@ -17,7 +17,7 @@ export function loader() {
 
 const OPTIONS: EmblaOptionsType = { slidesToScroll: 'auto' }
 
-export default function Rates({ loaderData }: Route.ComponentProps) {
+export default function Trainer({ loaderData }: Route.ComponentProps) {
     return (
         <div className="layout">
             <Sidebar className="sidebar" AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
