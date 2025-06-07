@@ -20,10 +20,15 @@ const OPTIONS: EmblaOptionsType = { slidesToScroll: 'auto' }
 export default function Trainer({ loaderData }: Route.ComponentProps) {
     return (
         <div className="layout">
+
             <Sidebar className="sidebar" AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
             <Header className="header" />
             <main className="content">
-                <ContentRates options={OPTIONS}/>
+                <div className="container-trainer">
+                    <div className="pages-trainer">
+                        <ContentRates options={OPTIONS}/>
+                    </div>
+                </div>
             </main>
             <Footer className="footer" />
 

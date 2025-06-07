@@ -11,8 +11,8 @@ function Header({ className } :{ className: string }){
                 <NavLink className="nav-link" to="/">Главная</NavLink>
                 <NavLink className="nav-link" to="/about">О нас</NavLink>
                 <NavLink className="nav-link" to="/rates">Тарифы</NavLink>
-                <NavLink className="nav-link" to="/">Тренера</NavLink>
-                <NavLink className="nav-link" to="/">Расписание</NavLink>
+                <NavLink className="nav-link" to="/trainer">Тренера</NavLink>
+                <NavLink className="nav-link" to="/schedule">Расписание</NavLink>
             </nav>
         </div>
     )
