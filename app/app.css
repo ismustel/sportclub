@@ -767,3 +767,39 @@ h1 {
     margin: 5% 10% 15% 10%;
 }
 
+.schedule-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: auto;
+    width: 100%;
+}
+.schedule-container h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+.schedule-table span {
+    color: #ffffff;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #eaeaea;
+}
+
+.schedule-table td span {
+    display: block;
+    margin-bottom: 5px;
+}
