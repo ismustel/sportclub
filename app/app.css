@@ -81,7 +81,6 @@ h1 {
     color: white;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px; /* Поля по краям */
     display: flex;
 }
 
@@ -198,6 +197,11 @@ h1 {
     white-space: nowrap;
 }
 
+.schedule{
+    width: 20%;
+    container-type: inline-size;
+}
+
 
 .weekday {
     margin-right: 10px; /* Отступ справа */
@@ -207,11 +211,20 @@ h1 {
     margin-left: 10px; /* Отступ слева */
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 2100px) {
     .weekend {
         margin-left: 0; /* Отступ слева */
     }
 }
+
+
+@container (max-width: 2000px) {
+    .weekend {
+        margin-left: 0;
+    }
+    
+}
+
 
 
 @media (max-width: 768px) {
@@ -312,7 +325,6 @@ h1 {
     width: 100%;
     max-width: 466px;
     height: 100vh;
-
     background-color: #ccbdb4;
     overflow: hidden;
     display: flex;
@@ -692,9 +704,16 @@ h1 {
     background-color: #666; /* Серый фон */
     color: white; /* Белый текст */
     padding: 20px; /* Поля вокруг содержимого */
-    border: 2px solid #00f; /* Голубая граница */
     border-radius: 8px; /* Скругленные углы */
     text-align: center; /* Выравнивание по центру */
+
+}
+
+.trainer-box-container {
+    color: white; /* Белый текст */
+    border-radius: 8px; /* Скругленные углы */
+    text-align: center; /* Выравнивание по центру */
+
 }
 
 /* Заголовок */
@@ -728,12 +747,13 @@ h1 {
     display: flex;
     align-items: center;
     margin-bottom: 10px; /* Отступ между пунктами */
+    font-size: 15px;
 }
 
 .checkmark {
     font-size: 20px;
     margin-right: 10px; /* Отступ между галочкой и текстом */
-    color: #00f; /* Голубой цвет галочки */
+    color: #ffffff; /* Голубой цвет галочки */
 }
 
 .container-trainer {
@@ -741,6 +761,9 @@ h1 {
     justify-content: center; /* Горизонтальное центрирование */
     align-items: center;     /* Вертикальное центрирование */
     width: 100%;
-    margin: 10% 20%;
+    height: 800px;
+    /*margin: 10% 20%;*/
     background-color: #d29776;
+    margin: 5% 10% 15% 10%;
 }
+

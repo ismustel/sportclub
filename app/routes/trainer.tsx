@@ -2,10 +2,10 @@ import type { Route } from './+types/trainer';
 import  Sidebar from '~/components/sidebar';
 import  Header from '~/components/header';
 import Footer from '~/components/footer';
-import ContentRates from "~/components/contentRates";
 import React from "react";
 import type {EmblaOptionsType} from "embla-carousel";
 import 'app/emblaTrainer.css'
+import ContentTrainer from "~/components/contentTrainer";
 
 
 export function loader() {
@@ -26,7 +26,7 @@ export default function Trainer({ loaderData }: Route.ComponentProps) {
             <main className="content">
                 <div className="container-trainer">
                     <div className="pages-trainer">
-                        <ContentRates options={OPTIONS}/>
+                        <ContentTrainer options={OPTIONS}/>
                     </div>
                 </div>
             </main>

@@ -1,25 +1,25 @@
-.embla {
-    max-width: 700px;
+.rates-embla {
+    max-width: 800px;
     margin: auto;
-    --slide-height: 19rem;
-    --slide-spacing: 1rem;
+    --slide-height: 40rem;
+    --slide-spacing: 2rem;
     --slide-size: 50%;
 }
-.embla__viewport {
+.rates-embla__viewport {
     overflow: hidden;
 }
-.embla__container {
+.rates-embla__container {
     display: flex;
     touch-action: pan-y pinch-zoom;
     margin-left: calc(var(--slide-spacing) * -1);
 }
-.embla__slide {
+.rates-embla__slide {
     transform: translate3d(0, 0, 0);
     flex: 0 0 var(--slide-size);
     min-width: 0;
     padding-left: var(--slide-spacing);
 }
-.embla__slide__number {
+.rates-embla__slide__number {
     box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
     border-radius: 1.8rem;
     font-size: 4rem;
@@ -30,17 +30,16 @@
     height: var(--slide-height);
     user-select: none;
 }
-.embla__controls {
+.rates-embla__controls {
     display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1.2rem;
-    margin-top: 1.8rem;
+    margin-top: 3rem;
 }
-.embla__buttons {
+.rates-embla__buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    gap: 10rem;
     align-items: center;
 }
 .embla__button {
@@ -69,8 +68,8 @@
     color: var(--detail-high-contrast);
 }
 .embla__button__svg {
-    width: 35%;
-    height: 35%;
+    width: 70%;
+    height: 70%;
 }
 .embla__dots {
     display: flex;

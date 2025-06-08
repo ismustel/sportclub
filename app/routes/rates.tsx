@@ -5,7 +5,7 @@ import Footer from 'app/components/footer';
 import ContentRates from "~/components/contentRates";
 import React from "react";
 import type {EmblaOptionsType} from "embla-carousel";
-import 'app/embla.css'
+import 'app/emblaRates.css'
 
 
 export function loader() {
@@ -23,9 +23,10 @@ export default function Rates({ loaderData }: Route.ComponentProps) {
             <Sidebar className="sidebar" AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
             <Header className="header" />
             <main className="content">
+
                 <ContentRates options={OPTIONS}/>
             </main>
-            <Footer className="footer" />
+            <Footer className="footer"/>
 
         </div>
     );
