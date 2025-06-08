@@ -3,25 +3,27 @@ import React from 'react';
 function ScheduleTable(){
     return (
         <div className="schedule-container">
-            <h2>Расписание групповых занятий</h2>
+            <div className="header-table">
+                <h2>Расписание групповых занятий</h2>
+            </div>
             <table className="schedule-table">
                 <thead>
                 <tr>
-                    <th></th>
-                    <th>Пн</th>
-                    <th>Вт</th>
-                    <th>Ср</th>
-                    <th>Чт</th>
-                    <th>Пт</th>
-                    <th>Сб</th>
-                    <th>Вс</th>
+                    <th className="main-table-block"></th>
+                    <th className="not-border-top">Пн</th>
+                    <th className="not-border-top">Вт</th>
+                    <th className="not-border-top">Ср</th>
+                    <th className="not-border-top">Чт</th>
+                    <th className="not-border-top">Пт</th>
+                    <th className="not-border-top">Сб</th>
+                    <th className="not-border-top">Вс</th>
                 </tr>
                 </thead>
                 <tbody>
                 {/* Строка "Растяжка" */}
                 <tr>
-                    <td>Фитнес</td>
-                    <td>
+                    <td className="td-white-block">Фитнес</td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -30,7 +32,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -39,7 +41,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -48,8 +50,8 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td></td>
-                    <td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -58,7 +60,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -67,7 +69,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -78,9 +80,9 @@ function ScheduleTable(){
                     </td>
                 </tr>
                 <tr>
-                    <td>Растяжка</td>
-                    <td></td>
-                    <td>
+                    <td className="td-white-block">Растяжка</td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">09:00-10:00</div>
@@ -89,8 +91,8 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td></td>
-                    <td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">09:00-10:00</div>
@@ -99,7 +101,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-12:00</div>
@@ -108,7 +110,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">09:00-10:00</div>
@@ -117,7 +119,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-12:00</div>
@@ -130,8 +132,8 @@ function ScheduleTable(){
 
                 {/* Строка "Кардио" */}
                 <tr>
-                    <td>Кардио</td>
-                    <td>
+                    <td className="td-white-block">Кардио</td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -140,7 +142,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -149,7 +151,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -158,8 +160,8 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td></td>
-                    <td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -168,7 +170,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -177,7 +179,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">15:00-17:00</div>
@@ -190,8 +192,8 @@ function ScheduleTable(){
 
                 {/* Строка "Йога" */}
                 <tr>
-                    <td>Йога</td>
-                    <td>
+                    <td className="td-white-block">Йога</td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">19:00-21:00</div>
@@ -200,7 +202,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">19:00-21:00</div>
@@ -209,8 +211,8 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td></td>
-                    <td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">19:00-21:00</div>
@@ -219,7 +221,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">19:00-21:00</div>
@@ -228,8 +230,8 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td></td>
-                    <td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">11:00-14:00</div>
@@ -242,8 +244,8 @@ function ScheduleTable(){
 
                 {/* Строка "Кроссфит" */}
                 <tr>
-                    <td>Кроссфит</td>
-                    <td>
+                    <td className="td-white-block">Кроссфит</td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -252,8 +254,8 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td></td>
-                    <td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -262,7 +264,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -271,7 +273,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -280,7 +282,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -289,7 +291,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -302,9 +304,9 @@ function ScheduleTable(){
 
                 {/* Строка "Бокс" */}
                 <tr>
-                    <td>Бокс</td>
-                    <td></td>
-                    <td>
+                    <td className="td-white-block">Бокс</td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -313,7 +315,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -322,7 +324,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -331,7 +333,7 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td>
+                    <td className="td-beige-block">
                         <div className="table-cell">
                             <div>
                                 <div className="time">10:00-14:00</div>
@@ -340,8 +342,8 @@ function ScheduleTable(){
                             <button className="plus-button">+</button>
                         </div>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td className="td-beige-block"></td>
+                    <td className="td-beige-block"></td>
                 </tr>
                 </tbody>
             </table>

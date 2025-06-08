@@ -23,7 +23,7 @@ export default function Trainer({ loaderData }: Route.ComponentProps) {
 
             <Sidebar className="sidebar" AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
             <Header className="header" />
-            <main className="content">
+            <main className="content-trainer">
                 <div className="container-trainer">
                     <div className="pages-trainer">
                         <ContentTrainer options={OPTIONS}/>

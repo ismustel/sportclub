@@ -106,11 +106,25 @@ h1 {
 .content {
     grid-area: content;
     background-color: #d9d7d7;
-    overflow: hidden;
     position: relative;
+    overflow-y: auto;
     z-index: 1;
     display: flex;
+}
 
+.content-trainer {
+    grid-area: content;
+    background-color: #d9d7d7;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+}
+
+@media (max-width: 2300px) {
+    .content {
+        overflow-y: scroll;
+    }
 }
 
 .sidebar {
@@ -768,15 +782,17 @@ h1 {
 }
 
 .schedule-container {
-    background-color: #f9f9f9;
+    background-color: #d7d5d5;
     padding: 20px;
     margin: auto;
     width: 80%;
 
 }
 .schedule-container h2 {
-    text-align: center;
-    font-size: 40px;
+    text-align: left;
+    font-size: 50px;
+    padding: 30px;
+
 }
 
 .schedule-table {
@@ -789,22 +805,49 @@ h1 {
     color: #ffffff;
 }
 
-.schedule-table th,
-.schedule-table td {
-    border: 1px solid #ddd;
+.not-border-top {
+    border-top: 20px solid #ffffff;
+    border-left: 3px solid #d29776;
+    border-right: 3px solid #d29776;
+    border-bottom: 3px solid #d29776;
     padding: 10px;
+    font-size: 34px;
     text-align: center;
 }
 
 .schedule-table th {
-    background-color: #eaeaea;
+    background-color: #ffffff;
 }
 
+
 .td-beige-block {
-    background-color: #d29776;
+    background-color: #cebeb5;
+    border: 3px solid #d29776;
+    padding: 10px;
+    font-size: 34px;
+    text-align: center;
 }
+
 .td-white-block {
     background-color: #ffffff;
+    border-top: 3px solid #d29776;
+    border-left: 20px solid #ffffff;
+    border-right: 3px solid #d29776;
+    border-bottom: 3px solid #d29776;
+    padding: 10px;
+    font-size: 34px;
+    text-align: center;
+}
+
+.main-table-block{
+    background-color: #ffffff;
+    border-top: 20px solid #ffffff;
+    border-left: 20px solid #ffffff;
+    border-right: 3px solid #d29776;
+    border-bottom: 3px solid #d29776;
+    padding: 10px;
+    font-size: 34px;
+    text-align: center;
 }
 
 .schedule-table td span {
@@ -817,3 +860,27 @@ h1 {
     align-items: center; /* Выравнивание по вертикали */
     gap: 20px; /* Отступ между элементами */
 }
+
+.time{
+    color: #ffffff;
+}
+
+.seats{
+    color: #ffffff;
+}
+
+.schedule-table tbody {
+
+}
+
+.plus-button {
+    color: #289e1a;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.header-table {
+    background-color: #ffffff;
+    .cut-top-right {  clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%);}
+}
+
