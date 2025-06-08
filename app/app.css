@@ -771,7 +771,8 @@ h1 {
     background-color: #f9f9f9;
     padding: 20px;
     margin: auto;
-    width: 100%;
+    width: 80%;
+
 }
 .schedule-container h2 {
     text-align: center;
@@ -799,7 +800,20 @@ h1 {
     background-color: #eaeaea;
 }
 
+.td-beige-block {
+    background-color: #d29776;
+}
+.td-white-block {
+    background-color: #ffffff;
+}
+
 .schedule-table td span {
     display: block;
     margin-bottom: 5px;
+}
+
+.table-cell {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 20px; /* Отступ между элементами */
 }
