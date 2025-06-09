@@ -881,6 +881,8 @@ h1 {
 
 .header-table {
     background-color: #ffffff;
-    .cut-top-right {  clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%);}
+    width: 100%;
+    clip-path: polygon(0 0, calc(100% - 39%) 0, calc(100% - 26%) 100%, 100% 100%, 0 100%);
 }
+
 
