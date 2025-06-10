@@ -116,7 +116,7 @@ h1 {
     grid-area: content;
     background-color: #d9d7d7;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
     z-index: 1;
     display: flex;
 }
