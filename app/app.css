@@ -824,10 +824,10 @@ h1 {
     background-color: #cebeb5;
     border: 3px solid #d29776;
     padding: 10px;
+    min-width: 276px !important;
     font-size: 34px;
     text-align: center;
 }
-
 .td-white-block {
     background-color: #ffffff;
     border-top: 3px solid #d29776;

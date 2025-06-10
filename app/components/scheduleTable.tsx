@@ -1,6 +1,74 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ScheduleTableRow from "~/components/rowScheduleTable";
+
 
 function ScheduleTable(){
+    type Row = {
+        id: number,
+        name : string,
+        days: Cell[]
+    }
+
+    type Cell ={
+        day: number,
+        timeStart: string,
+        timeEnd: string,
+        available: number,
+    }
+
+    const [scheduleData, setScheduleData] = useState<Row[]>([
+        {
+            id: 1,
+            name: 'Фитнес',
+            days: [
+                {
+                    day: 1,
+                    timeStart: '00:00',
+                    timeEnd: '00:00',
+                    available: 1,
+                },
+                {
+                    day: 2,
+                    timeStart: '00:00',
+                    timeEnd: '00:00',
+                    available: 2,
+                },
+                {
+                    day: 3,
+                    timeStart: '00:00',
+                    timeEnd: '00:00',
+                    available: 3,
+                },
+                {
+                    day: 6,
+                    timeStart: '00:00',
+                    timeEnd: '00:00',
+                    available: 3,
+                }
+            ]
+        },
+        {
+            id: 2,
+            name: 'Растяжка',
+            days: [
+                {
+                    day: 2,
+                    timeStart: '00:00',
+                    timeEnd: '00:00',
+                    available: 7,
+                },
+                {
+                    day: 4,
+                    timeStart: '00:00',
+                    timeEnd: '00:00',
+                    available: 9,
+                },
+
+            ]
+
+        }
+    ]);
+
     return (
         <div className="schedule-container">
             <div className="header-table">
@@ -20,331 +88,21 @@ function ScheduleTable(){
                 </tr>
                 </thead>
                 <tbody>
-                {/* Строка "Растяжка" */}
-                <tr>
-                    <td className="td-white-block">Фитнес</td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td className="td-white-block">Растяжка</td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">09:00-10:00</div>
-                                <div className="seats">8 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">09:00-10:00</div>
-                                <div className="seats">8 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-12:00</div>
-                                <div className="seats">2 места</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">09:00-10:00</div>
-                                <div className="seats">8 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-12:00</div>
-                                <div className="seats">2 места</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                </tr>
+                {scheduleData.map((row, index) => (
+                    <tr key={index}>
+                        <td className="td-white-block">{row.name}</td>
+                        {new Array(7).fill(0).map((_, index) => (
+                            <td className="td-beige-block">
+                                {row.days.map((cell) => (
+                                    cell.day === (index + 1) ? (
+                                        <ScheduleTableRow timeStart={cell.timeStart} timeEnd={cell.timeEnd} Seats={cell.available} />
+                                        ) : null
+                                ))}
+                            </td>
+                        ))}
 
-                {/* Строка "Кардио" */}
-                <tr>
-                    <td className="td-white-block">Кардио</td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">15:00-17:00</div>
-                                <div className="seats">20 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                </tr>
-
-                {/* Строка "Йога" */}
-                <tr>
-                    <td className="td-white-block">Йога</td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">19:00-21:00</div>
-                                <div className="seats">3 места</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">19:00-21:00</div>
-                                <div className="seats">3 места</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">19:00-21:00</div>
-                                <div className="seats">3 места</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">19:00-21:00</div>
-                                <div className="seats">3 места</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">11:00-14:00</div>
-                                <div className="seats">10 мест</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                </tr>
-
-                {/* Строка "Кроссфит" */}
-                <tr>
-                    <td className="td-white-block">Кроссфит</td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                </tr>
-
-                {/* Строка "Бокс" */}
-                <tr>
-                    <td className="td-white-block">Бокс</td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block">
-                        <div className="table-cell">
-                            <div>
-                                <div className="time">10:00-14:00</div>
-                                <div className="seats">1 место</div>
-                            </div>
-                            <button className="plus-button">+</button>
-                        </div>
-                    </td>
-                    <td className="td-beige-block"></td>
-                    <td className="td-beige-block"></td>
-                </tr>
+                    </tr>
+                ))}
                 </tbody>
             </table>
         </div>

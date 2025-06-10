@@ -23,7 +23,6 @@ export default function Rates({ loaderData }: Route.ComponentProps) {
             <Sidebar className="sidebar" AvatarUrl={loaderData.avatar} countVisits={loaderData.countVisits}/>
             <Header className="header" />
             <main className="content">
-
                 <ContentRates options={OPTIONS}/>
             </main>
             <Footer className="footer"/>

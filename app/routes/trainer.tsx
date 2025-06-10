@@ -28,6 +28,7 @@ export default function Trainer({ loaderData }: Route.ComponentProps) {
                     <div className="pages-trainer">
                         <ContentTrainer options={OPTIONS}/>
                     </div>
+
                 </div>
             </main>
             <Footer className="footer" />

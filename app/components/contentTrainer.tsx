@@ -35,43 +35,43 @@ function ContentRates(props: PropType): React.ReactElement {
                 <div className="trainer-embla__container">
                     <div className="trainer-embla__slide" key={1}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер'} nameTrainer={"СТЕПАНЫЧ"} image={'app/img/trainer_1.jpg'} />
+                            <TrainerCard title={'Тренер'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />
                         </div>
                     </div>
                     <div className="trainer-embla__slide" key={2}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер'} nameTrainer={"КИРЮХа"} image={'app/img/trainer_1.jpg'} />
+                            <TrainerCard title={'Тренер'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />
                         </div>
                     </div>
                     <div className="trainer-embla__slide" key={3}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер'} nameTrainer={"КАТЮХА"} image={'app/img/trainer_1.jpg'} />
+                            <TrainerCard title={'Тренер'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />
                         </div>
                     </div>
                     <div className="trainer-embla__slide" key={4}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер'} nameTrainer={"НАСТЮХА"} image={'app/img/trainer_1.jpg'} />
+                            <TrainerCard title={'Тренер'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />
                         </div>
                     </div>
                     <div className="trainer-embla__slide" key={1}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер'} nameTrainer={"ИВАНЫЧ"} image={'app/img/trainer_1.jpg'} />
+                            <TrainerCard title={'Тренер'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />
                         </div>
                     </div>
                     <div className="trainer-embla__slide" key={2}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер'} nameTrainer={"ПАВЛИК"} image={'app/img/trainer_1.jpg'} />.
+                            <TrainerCard title={'Тренер'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />.
 
                         </div>
                     </div>
                     <div className="trainer-embla__slide" key={3}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер7'} nameTrainer={"ПАВЛИК"} image={'app/img/trainer_1.jpg'} />
+                            <TrainerCard title={'Тренер7'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />
                         </div>
                     </div>
                     <div className="trainer-embla__slide" key={4}>
                         <div className="trainer-embla__slide__number">
-                            <TrainerCard title={'Тренер8'} nameTrainer={"ПАВЛИК"} image={'app/img/trainer_1.jpg'} />
+                            <TrainerCard title={'Тренер8'} nameTrainer={"Тренер"} image={'app/img/trainer_1.jpg'} />
                         </div>
                     </div>
                 </div>
@@ -83,6 +83,7 @@ function ContentRates(props: PropType): React.ReactElement {
                     <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
                 </div>
             </div>
+
         </section>
     );
 }
