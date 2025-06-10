@@ -785,7 +785,7 @@ h1 {
     background-color: #d7d5d5;
     padding: 20px;
     margin: auto;
-    width: 80%;
+    width: auto;
 
 }
 .schedule-container h2 {
@@ -824,7 +824,7 @@ h1 {
     background-color: #cebeb5;
     border: 3px solid #d29776;
     padding: 10px;
-    min-width: 276px !important;
+    min-width: 276px;
     font-size: 34px;
     text-align: center;
 }

@@ -1,73 +1,39 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ScheduleTableRow from "~/components/rowScheduleTable";
 
 
+type Row = {
+    id: number,
+    name : string,
+    days: Cell[]
+}
+
+type Cell ={
+    day: number,
+    timeStart: string,
+    timeEnd: string,
+    available: number,
+}
 function ScheduleTable(){
-    type Row = {
-        id: number,
-        name : string,
-        days: Cell[]
-    }
 
-    type Cell ={
-        day: number,
-        timeStart: string,
-        timeEnd: string,
-        available: number,
-    }
+    const [scheduleData, setScheduleData] = useState<Row[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    const [scheduleData, setScheduleData] = useState<Row[]>([
-        {
-            id: 1,
-            name: 'Фитнес',
-            days: [
-                {
-                    day: 1,
-                    timeStart: '00:00',
-                    timeEnd: '00:00',
-                    available: 1,
-                },
-                {
-                    day: 2,
-                    timeStart: '00:00',
-                    timeEnd: '00:00',
-                    available: 2,
-                },
-                {
-                    day: 3,
-                    timeStart: '00:00',
-                    timeEnd: '00:00',
-                    available: 3,
-                },
-                {
-                    day: 6,
-                    timeStart: '00:00',
-                    timeEnd: '00:00',
-                    available: 3,
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: 'Растяжка',
-            days: [
-                {
-                    day: 2,
-                    timeStart: '00:00',
-                    timeEnd: '00:00',
-                    available: 7,
-                },
-                {
-                    day: 4,
-                    timeStart: '00:00',
-                    timeEnd: '00:00',
-                    available: 9,
-                },
+    useEffect(() => {
+        fetch('http://localhost:5000/api/schedule')
+            .then((res) => res.json())
+            .then((data) => {
+                setScheduleData(data);
+                setLoading(false);
+                console.log(data);
+            })
+            .catch((err) => {
+                console.error("Ошибка загрузки:", err);
+                setLoading(false);
+            });
+    }, []);
 
-            ]
 
-        }
-    ]);
 
     return (
         <div className="schedule-container">

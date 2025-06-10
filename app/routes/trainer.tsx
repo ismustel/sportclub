@@ -17,6 +17,8 @@ export function loader() {
 
 const OPTIONS: EmblaOptionsType = { slidesToScroll: 'auto' }
 
+
+
 export default function Trainer({ loaderData }: Route.ComponentProps) {
     return (
         <div className="layout">

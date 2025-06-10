@@ -6,7 +6,7 @@ function ScheduleTableRow({timeStart, timeEnd, Seats} : {timeStart: string, time
         <div className="table-cell">
             <div>
                 <div className="time">{timeStart}-{timeEnd} </div>
-                <div className="seats">{Seats}</div>
+                <div className="seats">{Seats} мест</div>
             </div>
             <button className="plus-button">+</button>
         </div>
